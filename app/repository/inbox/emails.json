@@ -1,0 +1,10 @@
+[{
+	"subject":"first inbox email",
+    "body" :"hello guys this is my first message"
+ },
+{
+	"subject":"second inbox email",
+    "body" :"Voila this is my second message"
+ }
+
+]

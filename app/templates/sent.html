@@ -1,0 +1,11 @@
+<div>
+<input type = "text" ng-model="searchMail">	
+<li ng-repeat="email in emails | filter : searchMail">
+
+<span><b>{{email.subject}}:</b></span><br>
+<span>{{email.body}}</span>
+
+</li>
+
+
+</div>
