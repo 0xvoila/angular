@@ -1,7 +1,16 @@
 var myapp = angular.module('emailApp',["ui.router"]).config(function($stateProvider , $urlRouterProvider){
    
-    $urlRouterProvider.otherwise('/inbox');
-	$stateProvider.state('inbox', 
+    $urlRouterProvider.otherwise('/mail');
+
+    $stateProvider.state('mail',
+	
+	{	url : '/mail',
+		templateUrl:'../templates/mail.html',
+		controller:'mailController'
+    });
+
+
+	$stateProvider.state('mail.inbox', 
 
 		    {
 		    	url: '/inbox',
@@ -9,7 +18,7 @@ var myapp = angular.module('emailApp',["ui.router"]).config(function($stateProvi
 		    	controller: 'inboxController'
 		    });
 
-	$stateProvider.state('sent' ,
+	$stateProvider.state('mail.sent' ,
 
 		    {
 		    	url: '/sent',
@@ -18,7 +27,7 @@ var myapp = angular.module('emailApp',["ui.router"]).config(function($stateProvi
 
 		    });
 
-	$stateProvider.state('deleted',
+	$stateProvider.state('mail.deleted',
 
 		    {
 
