@@ -1,13 +1,16 @@
-myapp.controller('registrationStep1Controller' , function($scope , $state , $http , registrationFactory){
+myapp.controller('registrationStep1Controller' , function($scope,obj,$state,$http,registrationdetails,registrationFactory){
 
+	$scope.registrationdetails = registrationdetails;
+
+	console.debug(obj);
 	$scope.submit = function(){
+		
+		firstName = registrationdetails.firstName;
+		lastName = registrationdetails.lastName;
+		voucherCode = registrationdetails.voucherCode;
+		country = registrationdetails.country;
 
-		console.debug("here I am ");
-		firstName = $scope.firstName;
-		lastName = $scope.lastName;
-		voucherCode = $scope.voucherCode;
-		country = $scope.country;
-
+        console.debug(registrationdetails);
 		data = {};
 		data.firstName = firstName;
 		data.lastName = lastName;

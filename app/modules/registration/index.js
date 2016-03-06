@@ -1,4 +1,6 @@
-registrationModule = angular.module('emailApp.registration' , ['ui.router']).config(function($stateProvider , $urlRouterProvider){
+registrationModule = angular.module('emailApp.registration' , ['ui.router' ,'emailApp.registration.registrationdetails']).config(function($stateProvider , $urlRouterProvider){
+
+	console.log('From registration module');
 
 	$urlRouterProvider.otherwise('/registration');
 
@@ -6,7 +8,9 @@ registrationModule = angular.module('emailApp.registration' , ['ui.router']).con
 
 		url:'/registration',
 		controller:'registrationController',
-		templateUrl:'partials/registration.html'
+		controllerAs: 'reg',
+		templateUrl:'partials/registration.html',
+
 
 	});
 
@@ -14,6 +18,15 @@ registrationModule = angular.module('emailApp.registration' , ['ui.router']).con
 
 		url: '/step1',
 		controller : 'registrationStep1Controller',
+		resolve : {
+
+			obj : function(){
+
+				return {value:"amit"};
+			}
+		},
+
+		controllerAs: 'regStep1',
 		templateUrl : 'partials/step1.html',
 
 	});
@@ -22,6 +35,7 @@ registrationModule = angular.module('emailApp.registration' , ['ui.router']).con
 
 		url: '/step2',
 		controller : 'registrationStep2Controller',
+		controllerAs: 'regStep2',
 		templateUrl : 'partials/step2.html'
 
 	});
@@ -30,6 +44,7 @@ registrationModule = angular.module('emailApp.registration' , ['ui.router']).con
 
 		url:'/completed',
 		controller : 'registrationCompleted',
+		controllerAs: 'regCompleted',
 		templateUrl : 'partials/completed.html'
 
 

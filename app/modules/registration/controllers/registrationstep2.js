@@ -1,4 +1,4 @@
-myapp.controller('registrationStep2Controller' , function($scope , $state , $http , registrationFactory){
+myapp.controller('registrationStep2Controller' , function($scope , $state , $http ,registrationdetails ,registrationFactory){
 
 	x = registrationFactory.getUserInfo();
 	console.log('Google is here---');
@@ -6,11 +6,16 @@ myapp.controller('registrationStep2Controller' , function($scope , $state , $htt
 
 	// Now store step2 data of registration
 
-	$scope.mesubmit = function(){
+	$scope.asubmit = function(){
 
+		email = registrationdetails.email;
+
+		console.debug('getting email is ' + email);
+		password = registrationdetails.password;
+		
 		data = {};
-		data.email = $scope.email;
-		data.password = $scope.password;
+		data.email = email;
+		data.password = password;
 		registrationFactory.step2Store(data);
 
 		console.debug("Data stored for user ");
